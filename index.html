@@ -118,14 +118,70 @@ label[for="quantity"] {
     </tbody>
   </table>
   <br><br>
-<form action="send-email.php" method="post">
-  <input type="text" name="name" placeholder="Your Name">
-  <input type="email" name="email" placeholder="Your Email">
-  <input type="text" name="product" placeholder="Product Name">
-  <input type="text" name="quantity" placeholder="Quantity">
-  <input type="text" name="total_price" placeholder="Total Price">
-  <input type="submit" value="Submit">
+<!-- Cart Form -->
+<form id="cartForm">
+  <!-- Product Name -->
+  <div class="form-group">
+    <label for="productName">Product Name:</label>
+    <input type="text" class="form-control" id="productName" value="Example Product" disabled>
+  </div>
+  <!-- Price -->
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input type="text" class="form-control" id="price" value="$100" disabled>
+  </div>
+  <!-- Quantity -->
+  <div class="form-group">
+    <label for="quantity">Quantity:</label>
+    <input type="number" class="form-control" id="quantity" value="1">
+  </div>
+  <!-- Total Price -->
+  <div class="form-group">
+    <label for="totalPrice">Total Price:</label>
+    <input type="text" class="form-control" id="totalPrice" value="$100" disabled>
+  </div>
+  <!-- Customer Information -->
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" required>
+  </div>
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <!-- JavaScript to send form data to email -->
+<script>
+  // Get the form element
+  const cartForm = document.getElementById('cartForm');
+  
+  // Add a submit event listener to the form
+  cartForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    
+    // Get the form data
+    const productName = document.getElementById('productName').value;
+    const price = document.getElementById('price').value;
+    const quantity = document.getElementById('quantity').value;
+    const totalPrice = document.getElementById('totalPrice').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    // Use an email API to send the form data to an email address
+    // Example using EmailJS: https://www.emailjs.com/
+    emailjs.send('mobilebattleground817@gmail.com', 'service_zkmved5', {
+      productName: productName,
+      price: price,
+      quantity: quantity,
+      totalPrice: totalPrice,
+      name: name,
+      email: email
+    });
+  });
+</script>
 </form>
+
 
 </div>
 <script>const productName = document.querySelector('.product-name').textContent;
