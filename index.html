@@ -118,29 +118,23 @@ label[for="quantity"] {
     </tbody>
   </table>
   <br><br>
-<!-- Cart Form -->
 <form name="contact" method="POST" data-netlify="true">
-  <!-- Product Name -->
-  <div class="form-group">
-    <label for="product-name">Product Name:</label>
+  <div>
+    <label>Product Name:</label>
     <input type="text">
   </div>
-  <!-- Price -->
   <div>
-    <label for="price">Price:</label>
-    <input type="text" value="$100" disabled>
+    <label>Price:</label>
+    <input type="text" value="$100">
   </div>
-  <!-- Quantity -->
   <div>
     <label>Quantity:</label>
     <input type="number" value="1">
   </div>
-  <!-- Total Price -->
   <div>
     <label>Total Price:</label>
-    <input type="text" value="$100" disabled>
+    <input type="text" value="$100">
   </div>
-  <!-- Customer Information -->
   <div>
     <label>Name:</label>
     <input type="text" required>
@@ -149,10 +143,8 @@ label[for="quantity"] {
     <label>Email:</label>
     <input type="email" required>
   </div>
-  <!-- Submit Button -->
   <button type="submit">Submit</button>
 </form>
-</div>
 <script>const productName = document.querySelector('.product-name').textContent;
 const price = document.querySelector('#price').textContent;
 const capacity = document.querySelector('#capacity').textContent;
